@@ -1,0 +1,23 @@
+type Editor {
+  id: ID!
+  code: String
+  type: EditorType
+}
+
+enum EditorType {
+  javascript
+}
+
+input UpdateEditorInput {
+  id: ID!
+  code: String
+  type: EditorType
+}
+
+type Query {
+  editor: Editor!
+}
+
+type Mutation {
+  updateEditor(input: UpdateEditorInput!): Editor!
+}
